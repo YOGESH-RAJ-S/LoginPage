@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hyundai Mobis Job Registration</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <section class="container">
+      <header>Registration Form</header>
+      <form class="form" onsubmit="reg(event)">
+        <div class="input-box">
+          <label>Full Name</label>
+          <input type="text" name="fullName" placeholder="Enter full name" required />
+        </div>
+        <div class="input-box">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="Enter email address" required />
+        </div>
+        <div class="column">
+          <div class="input-box">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="Enter phone number" required />
+          </div>
+          <div class="input-box">
+            <label>Birth Date</label>
+            <input type="date" name="birthdate" required />
+          </div>
+        </div>
+        <div class="gender-box">
+          <h3>Gender</h3>
+          <div class="gender-option">
+            <div class="gender">
+              <input type="radio" id="check-male" name="gender" value="Male" required />
+              <label for="check-male">Male</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-female" name="gender" value="Female" required />
+              <label for="check-female">Female</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-other" name="gender" value="Prefer not to say" required />
+              <label for="check-other">Prefer not to say</label>
+            </div>
+          </div>
+        </div>
+        <div class="input-box address">
+          <label>Address</label>
+          <input type="text" name="street" placeholder="Enter street address" required />
+          <input type="text" name="street2" placeholder="Enter street address line 2" />
+
+          <div class="column">
+            <div class="select-box">
+              <select name="state" required>
+                <option value="" hidden>Select State</option>
+                <option value="Tamilnadu">Tamilnadu</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Karnataka">Karnataka</option>
+              </select>
+            </div>
+            <input type="text" name="city" placeholder="Enter your city" required />
+          </div>
+          <div class="column">
+            <input type="number" name="pincode" placeholder="Enter Your Pincode" required />
+            <div class="select-box">
+              <select name="course" required>
+                <option value="" hidden>Select Course</option>
+                <option value="Diploma Mechanical">Diploma Mechanical</option>
+                <option value="Diploma EEE">Diploma EEE</option>
+                <option value="Diploma ECE">Diploma ECE</option>
+                <option value="Diploma Automobiles">Diploma Automobiles</option>
+              </select>
+            </div>
+          </div>
+          <input type="number" name="passingYear" placeholder="Enter college passing year" required />
+        </div>
+        <div>
+          <button type="submit" class="btn btn-register">Register</button>
+        </div>
+      </form>
+    </section>
+
+    <script>
+      function reg(event) {
+        event.preventDefault(); // Prevent form submission
+        Swal.fire({
+          title: "Registration Successful!",
+          text: "Your job application has been submitted successfully.",
+          icon: "success"
+        });
+      }
+    </script>
+  </body>
+</html>
